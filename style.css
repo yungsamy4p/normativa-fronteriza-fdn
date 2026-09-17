@@ -1,0 +1,315 @@
+/* CODIGO ABIERTO BY YUNG SAMY - DISCORD: likeadversario
+   GITHUB: https://github.com/yungsamy4p/fdn-portal
+   INSTAGRAM: https://www.instagram.com/yungsamy4p */
+
+:root {
+    --bg-main: #0a0d0b;
+    --bg-card: #121713;
+    --bg-card-header: #171f19;
+    --accent-green: #38ef7d;
+    --accent-red: #ff4757;
+    --border-dim: #212c23;
+    --border-bright: #3d5241;
+    --text-primary: #e6ede8;
+    --text-muted: #85988b;
+    --font-ui: 'Chakra Petch', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    line-height: 1.6;
+    padding-bottom: 3rem;
+}
+
+/* Header */
+.tactical-header {
+    background: linear-gradient(180deg, #18231b 0%, #0a0d0b 100%);
+    border-bottom: 2px solid var(--border-dim);
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nato-code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    letter-spacing: 2px;
+}
+
+.tactical-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0.3rem 0;
+}
+
+.tactical-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.hud-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 239, 125, 0.08);
+    border: 1px solid var(--border-dim);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-green);
+}
+
+.status-pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Menú de Navegación */
+.quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    background: rgba(10, 13, 11, 0.9);
+    padding: 0.5rem 0;
+    backdrop-filter: blur(8px);
+}
+
+.nav-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    color: var(--text-muted);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: #19221b;
+}
+
+/* Tarjetas Normativas */
+.normative-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.normative-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-dim);
+    transition: border-color 0.2s;
+}
+
+.normative-card:hover {
+    border-color: var(--border-bright);
+}
+
+.normative-card.alert-border {
+    border-left: 4px solid var(--accent-red);
+}
+
+.card-header {
+    background: var(--bg-card-header);
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--border-dim);
+}
+
+.card-tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-green);
+    letter-spacing: 1px;
+}
+
+.alert-tag {
+    color: var(--accent-red);
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.2rem;
+}
+
+.card-body {
+    padding: 1.4rem;
+}
+
+.lead {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 1.2rem;
+}
+
+.text-danger {
+    color: #ff99a2;
+}
+
+/* Listas */
+.bullet-list, .bullet-list-alert {
+    padding-left: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.bullet-list li strong {
+    color: #cadbcf;
+}
+
+.bullet-list-alert li {
+    color: #f7d7da;
+}
+
+/* Grilla de Facultades */
+.grid-facultades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.facultad-item {
+    background: #0d120f;
+    border: 1px solid var(--border-dim);
+    padding: 1rem;
+    position: relative;
+}
+
+.facultad-item .num {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--border-bright);
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+.facultad-item h4 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.facultad-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Lista de Obligaciones */
+.rule-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.rule-list li {
+    display: flex;
+    gap: 1rem;
+    background: #0d120f;
+    padding: 1rem;
+    border: 1px solid var(--border-dim);
+}
+
+.rule-list .icon {
+    font-size: 1.3rem;
+}
+
+/* Callouts y Danger Boxes */
+.warning-callout {
+    display: flex;
+    gap: 1rem;
+    background: rgba(255, 177, 66, 0.05);
+    border: 1px solid #7d5918;
+    padding: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+.warning-callout h4 {
+    color: #ffb142;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.warning-callout p {
+    font-size: 0.9rem;
+    color: #d1c7b8;
+}
+
+.danger-box {
+    background: rgba(255, 71, 87, 0.07);
+    border: 1px solid #78262d;
+    padding: 1.2rem;
+    margin-top: 1.4rem;
+}
+
+.danger-box h3 {
+    color: var(--accent-red);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.danger-box p {
+    font-size: 0.9rem;
+    color: #eed5d7;
+}
+
+/* Footer */
+.tactical-footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-dim);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #58695d;
+    margin-top: 0.3rem;
+}
